@@ -4,7 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.chatmate.splash_screen
+import com.example.chatmate.auth.LoginScreen
+import com.example.chatmate.auth.SignUp
+import com.example.chatmate.auth.splash_screen
 
 
 @Composable
@@ -18,10 +20,10 @@ fun NavGraph(){
             splash_screen(navController = navController)
         }
         composable(Routes.Login.routes) {
-            Login_screen(navController = navController)
+            LoginScreen(navController = navController)
         }
         composable(Routes.SignUp.routes) {
-            signup_screen(navController = navController)
+            SignUp(navController = navController)
         }
         composable(Routes.Chat.routes) {
             chat_screen(navController = navController)
