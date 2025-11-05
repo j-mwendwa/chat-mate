@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatMate">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.components.SplashActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ChatMate">
@@ -22,6 +22,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.components.LoginActivity"
+            android:exported="true"
+            android:launchMode="standard"
+            />
+        <activity
+            android:name=".ui.components.SignUpActivity"
+            android:exported="true"
+            android:launchMode="standard"
+            />
+        <activity
+            android:name=".ui.components.ChatActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            />
+        <activity
+            android:name=".ui.components.SplashActivity"
+            android:exported="true"
+            android:launchMode="standard"
+            />
+
+
+
     </application>
 
 </manifest>

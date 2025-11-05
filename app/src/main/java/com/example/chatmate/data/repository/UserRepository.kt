@@ -11,6 +11,7 @@ class UserRepository {
     suspend fun createUser(user: User) {
         db.document(user.uid).set(user).await()
 
+
     }
 
 

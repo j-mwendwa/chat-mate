@@ -6,18 +6,19 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.chatmate.auth.LoginScreen
 import com.example.chatmate.auth.SignUp
-import com.example.chatmate.auth.splash_screen
+import com.example.chatmate.auth.Splashscreen
+import com.example.chatmate.chat.Chatscreen
 
 
 @Composable
-fun NavGraph(){
+fun RootNavigation(){
     val navController = rememberNavController()
     NavHost(
         navController = navController,
         startDestination = Routes.Splash.routes
     ) {
         composable(Routes.Splash.routes) {
-            splash_screen(navController = navController)
+            Splashscreen(navController = navController)
         }
         composable(Routes.Login.routes) {
             LoginScreen(navController = navController)
@@ -26,7 +27,7 @@ fun NavGraph(){
             SignUp(navController = navController)
         }
         composable(Routes.Chat.routes) {
-            chat_screen(navController = navController)
+            Chatscreen(navController = navController)
         }
 
     }

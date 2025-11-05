@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.delay
 
 @Composable
-fun splash_screen(navController: NavController){
+fun Splashscreen(navController: NavController){
     LaunchedEffect(key1 = true) {
         delay(2000)
 

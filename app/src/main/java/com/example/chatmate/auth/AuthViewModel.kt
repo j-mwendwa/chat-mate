@@ -45,7 +45,7 @@ class AuthViewModel: ViewModel() {
             _authstate.value = AuthState.Loading
             try {
                 val authResult=auth.createUserWithEmailAndPassword(email, password).await()
-                val firebaseUser=authResult.user
+                val firebaseUser= authResult.user
                     
                     if (firebaseUser != null) {
                         val newUser = User(
@@ -56,6 +56,7 @@ class AuthViewModel: ViewModel() {
                         userRepository.createUser(newUser)
 
                         _authstate.value = AuthState.Success("Signed up successfully")
+
                     }else{
                     _authstate.value = AuthState.Failure("Signup failed")
                 }
@@ -65,6 +66,7 @@ class AuthViewModel: ViewModel() {
             }
         }
     }
+
 
     fun logout() {
         auth.signOut()

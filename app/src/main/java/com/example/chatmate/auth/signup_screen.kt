@@ -36,6 +36,8 @@ fun SignUp(
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
+    var displayName by remember { mutableStateOf("") }
+
     val context = LocalContext.current
 
     val authState by viewModel.authstate.collectAsState()
@@ -46,6 +48,13 @@ fun SignUp(
         horizontalAlignment =  Alignment.CenterHorizontally
 
     ) {
+        OutlinedTextField(
+            value = displayName,
+            onValueChange = { displayName = it },
+            label = { Text("Display Name") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
@@ -70,7 +79,7 @@ fun SignUp(
         Button(
             onClick = {
                 if (password == confirmPassword) {
-                    viewModel.signup(email, password)
+                    viewModel.signup(email, password, displayName)
                 } else {
                     Toast.makeText(context, "Passwords do not match", Toast.LENGTH_SHORT).show()
                     // Show error message
